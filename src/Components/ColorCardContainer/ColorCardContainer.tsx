@@ -1,6 +1,6 @@
-import React,{ Component, useEffect } from 'react';
+import React,{ Component} from 'react';
 import './ColorCardContainer.css'
-import ColorCard from '../ColorCard/ColorCard';
+import ColorCard from '../../Components/ColorCard/ColorCard';
 
 
 interface ColorCardContainerProps{

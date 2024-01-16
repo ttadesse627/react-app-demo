@@ -20,7 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*"],
+  "include": ["Components/*", "src/"],
   "exclude": ["node_modules/*", "test/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

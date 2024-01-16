@@ -2,7 +2,7 @@ import {Component} from "react";
 
 
 export class StateMgmt extends Component{
-    constructor(props){
+    constructor(props: {}){
         super(props);
     }
     state = {

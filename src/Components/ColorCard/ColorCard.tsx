@@ -1,9 +1,13 @@
 import React from "react";
 
-const ColorCard = (props) => {
+interface ColorCardPropTypes{
+    text: string;
+    style?: React.CSSProperties;
+}
+const ColorCard : React.FC<ColorCardPropTypes> = ({text, style}) => {
     return (
-        <div style={props.style}>
-            <p>{props.text}</p>
+        <div style={style}>
+            <p>{text}</p>
         </div>
     );
 };

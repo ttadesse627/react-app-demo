@@ -1,7 +1,8 @@
-import ColorCardContainer from './components/ColorCardContainer/ColorCardContainer';
+// import ColorCardContainer from './components/ColorCardContainer/ColorCardContainer';
 import "./App.css";
+import EventsDemo from './Components/EventsDemo/EventsDemo';
 
 
-function App() {return (<ColorCardContainer />);}
+function App() {return (<EventsDemo />);}
 
 export default App;

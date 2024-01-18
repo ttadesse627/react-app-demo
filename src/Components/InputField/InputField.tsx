@@ -14,7 +14,7 @@ const InputField : React.FC<InputFieldProps<any>> = ({id, label, type, name, val
     return (
         <div className="input-div">
             <label htmlFor={id}>{label}</label>
-            <input id={id != null? id : 'inputId'} type={type} name={name} value={value} placeholder={placeHolder} onChange={onChange} />
+            <input id={id} type={type} name={name} value={value} placeholder={placeHolder} onChange={onChange} />
         </div>
     );
 };

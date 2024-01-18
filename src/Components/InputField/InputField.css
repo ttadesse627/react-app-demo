@@ -1,31 +1,32 @@
-/* General styling for the input */
+
+.input-div{
+  margin: 5%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+}
 .input-div input {
     width: 100%;
     padding: 8px;
     margin: 5px 0;
     box-sizing: border-box;
     font-size: 1.5rem;
-    /* Add other common styles */
   }
   
-  /* Styling for the input with a dynamic ID */
   .input-div input[id^="submitForm"] {
     border: 2px solid #3498db;
-    color: #3498db;width: 50%;
-    /* Add styles specific to the dynamic ID */
+    color: #3498db;
+    width: 50%;
   }
   
-  /* Styling for the input with another dynamic ID */
-  .input-div input[id^="anotherDynamicIdPrefix"] {
-    border: 2px solid #e74c3c;
-    color: #e74c3c;
-    /* Add styles specific to the other dynamic ID */
-  }
-  
-  /* Additional styling for the label */
   .input-div label {
-    display: block;
-    margin-bottom: 5px;
+    background-color: #b6cddd;
     color: #fff;
     font-weight: bold;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    font-size: 1.5rem;
   }

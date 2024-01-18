@@ -1,5 +1,7 @@
 import { useState } from "react";
 import InputField from "../InputField/InputField";
+import './EventsDemo.css';
+import Button from "../Button/Button";
 
 
 
@@ -28,26 +30,26 @@ var [stateNamesList, setNamesList] = useState<string[]>([]);
       e.preventDefault();
       if (stateFirstName !== '' && stateLastName !== '') {
         setNamesList((prevState) => [...prevState, stateFirstName + ' '+ stateLastName]);
+        setFirstName('');
+        setLastName('');
       }
-      setFirstName('');
-      setLastName('');
     };
 
     return (
-        <div>
+        <div className="container">
         <h1>Form Handler</h1>
 
-        <form onSubmit={handleSubmit}>
-          <div>
+        <form className="input-form" onSubmit={handleSubmit}>
+          <div className="input-container">
             <InputField id="firstName" label="First Name" type="text" value={stateFirstName} onChange={changeFirstNameHandler}/>
             <InputField id="lastName" label="Last Name" type="text" value={stateLastName} onChange={changeLastNameHandler}/>
           </div>
-          <InputField id="submitForm" type="submit" value="Submit" />
+          <Button id="idSubmit" text="Add"/>
         </form>
-        <div>
-          <ul>
+        <div className="items-container">
+          <ol>
           {stateNamesList.map((name, index) => (<li key={index}>{name}</li>))}
-          </ul>
+          </ol>
         </div>
       </div>
     );

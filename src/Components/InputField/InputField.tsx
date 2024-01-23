@@ -5,16 +5,17 @@ interface InputFieldProps<T>{
     name?:string;
     label?: string;
     type: string;
-    value: T;
+    inputRef?: React.MutableRefObject<HTMLInputElement | null>;
+    value?: T;
     placeHolder?: string;
     onChange?: (newValue: T) => void;
 }
 
-const InputField : React.FC<InputFieldProps<any>> = ({id, label, type, name, value, placeHolder,onChange}) => {
+const InputField : React.FC<InputFieldProps<any>> = ({id, label, type, inputRef, name, value, placeHolder,onChange}) => {
     return (
         <div className="input-div">
             <label htmlFor={id}>{label}</label>
-            <input id={id} type={type} name={name} value={value} placeholder={placeHolder} onChange={onChange} />
+            <input id={id} type={type} ref={inputRef} name={name} value={value} placeholder={placeHolder} onChange={onChange} />
         </div>
     );
 };

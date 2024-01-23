@@ -37,20 +37,33 @@ var [stateNamesList, setNamesList] = useState<string[]>([]);
 
     return (
         <div className="container">
-        <h1>Form Handler</h1>
+          <h1>Form Handler</h1>
 
-        <form className="input-form" onSubmit={handleSubmit}>
-          <div className="input-container">
-            <InputField id="firstName" label="First Name" type="text" value={stateFirstName} onChange={changeFirstNameHandler}/>
-            <InputField id="lastName" label="Last Name" type="text" value={stateLastName} onChange={changeLastNameHandler}/>
+          <form className="input-form" onSubmit={handleSubmit}>
+            <div className="input-container">
+              <InputField 
+                id="firstName" 
+                label="First Name" 
+                type="text" 
+                value={stateFirstName} 
+                onChange={changeFirstNameHandler}
+              />
+              <InputField
+                id="lastName" 
+                label="Last Name" 
+                type="text" 
+                value={stateLastName} 
+                onChange={changeLastNameHandler}
+              />
+            </div>
+            <Button id="idSubmit" text="Add"/>
+          </form>
+          <div className="items-container">
+            <h2>List of Persons</h2>
+            <ol>
+            {stateNamesList.length > 0? stateNamesList.map((name, index) => (<li key={index}>{name}</li>)): "No person added!"}
+            </ol>
           </div>
-          <Button id="idSubmit" text="Add"/>
-        </form>
-        <div className="items-container">
-          <ol>
-          {stateNamesList.map((name, index) => (<li key={index}>{name}</li>))}
-          </ol>
-        </div>
       </div>
     );
 };

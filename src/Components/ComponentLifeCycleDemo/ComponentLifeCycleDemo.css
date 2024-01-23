@@ -41,7 +41,6 @@
 .input-container{
     width: 100%;
     /* background-color: aqua; */
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+    display: grid;
+    grid-auto-rows: auto;
 }

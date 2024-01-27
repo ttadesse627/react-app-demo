@@ -1,27 +1,47 @@
 var FormData = {
-    "ComponentLifeCycleDemo": {
-        "StudentData": {
-            "isError": false,
-            "errorsOrEmptyList": [""],
-            "errors": [""],
-            "value": [
-                {
-                    "Id": "00000000-0000-0000-0000-000000000000",
-                    "firstName": "00000000-0000-0000-0000-000000000000",
-                    "middleName": "00000000-0000-0000-0000-000000000000",
-                    "lastName": "00000000-0000-0000-0000-000000000000",
-                    "birthDate": "00000000-0000-0000-0000-000000000000",
-                }
-            ],
-            "firstError": {
-                "code": "",
-                "description": "",
-                "type": 0,
-                "numericType": 0,
-                "metadata": {}
-            }
-        }
-    }
-}
+  StudentData: {
+    isError: false,
+    errorsOrEmptyList: [""],
+    errors: [""],
+    value: [
+      {
+        Id: "00000000-0000-0000-0000-000000000000",
+        firstName: "",
+        middleName: "",
+        lastName: "",
+        birthDate: "2000-03-19 09:54 PM",
+      },
+    ],
+    firstError: {
+      code: "",
+      description: "",
+      type: 0,
+      numericType: 0,
+      metadata: {},
+    },
+  },
+  DepartmentData: {
+    isError: false,
+    errorsOrEmptyList: [""],
+    errors: [""],
+    data: [
+      {
+        Id: "00000000-0000-0000-0000-000000000000",
+        name: "",
+        shortName: "",
+        numberOfSemisters: 0,
+        currentSemister: 0,
+        Courses: [{}],
+      },
+    ],
+    firstError: {
+      code: "",
+      description: "",
+      type: 0,
+      numericType: 0,
+      metadata: {},
+    },
+  },
+};
 
 export default FormData;

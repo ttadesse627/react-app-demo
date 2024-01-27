@@ -1,12 +1,12 @@
-import "./App.css";
-import ComponentLifeCycleDemo from "./Components/ComponentLifeCycleDemo/ComponentLifeCycleDemo";
-import EventsDemo from "./Components/EventsDemo/EventsDemo";
-// import MultipleInputForm from "./Components/MultipleInputForm/MultipleInputForm";
-// import EventsDemo from './Components/EventsDemo/EventsDemo';
-// import UnControlledComponent from "./Components/UnControlledComponent/UnControlledComponent";
-// import ColorCardContainer from './components/ColorCardContainer/ColorCardContainer';
+import Menu from "./Components/Menus/Menu";
 
 
-function App() {return (<ComponentLifeCycleDemo />);}
+function App() {
+    return (
+        <>
+            <Menu />
+        </>
+    );
+}
 
 export default App;

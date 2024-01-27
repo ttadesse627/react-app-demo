@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import InputField from "../InputField/InputField";
-import Button from "../Button/Button";
-import '../../assets/form-style.css';
-import FormData from '../ComponentsProps';
+import InputField from "../../InputField/InputField";
+import Button from "../../Button/Button";
+import '../../../styles/form-style.css';
+import FormData from '../../ComponentsProps';
 
 
 

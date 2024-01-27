@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from "react";
-import InputField from "../InputField/InputField";
-import Button from "../Button/Button";
-import './ComponentLifeCycleDemo.css';
-import FormData from '../ComponentsProps';
+import InputField from "../../InputField/InputField";
+import Button from "../../Button/Button";
+import '../../../styles/student-registration.css';
+import FormData from '../../ComponentsProps';
 
 
 
 
-const ComponentLifeCycleDemo : React.FC = () => {
+const StudentRegistration : React.FC = () => {
 
     const API_Endpoint = 'http://localhost:5000/Student';
 
@@ -15,7 +15,7 @@ const ComponentLifeCycleDemo : React.FC = () => {
     const [middleName, setMiddleName] = useState('');
     const [lastName, setLastName] = useState('');
     const [birthDate, setBirthDate] = useState(new Date("1999-10-18T17:35"));
-    const [data, setData] = useState(FormData.ComponentLifeCycleDemo.StudentData);
+    const [data, setData] = useState(FormData.StudentData);
 
     let changeFirstNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFirstName(e.target.value);
@@ -48,7 +48,7 @@ const ComponentLifeCycleDemo : React.FC = () => {
 
       let handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
+        
         try {
             const response = await fetch(API_Endpoint, {
                 method: 'POST',
@@ -128,4 +128,4 @@ const ComponentLifeCycleDemo : React.FC = () => {
     );
 };
 
-export default ComponentLifeCycleDemo;
+export default StudentRegistration;

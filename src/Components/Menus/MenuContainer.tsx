@@ -1,6 +1,6 @@
 import React from 'react'
 import Menu from './Menu'
-import '../../assets/menu-style.css'
+import '../../styles/menu-style.css'
 
 function MenuContainer() {
   return (

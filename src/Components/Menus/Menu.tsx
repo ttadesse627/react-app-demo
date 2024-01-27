@@ -1,18 +1,21 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import DepartmentRegistration from '../Department/DepartmentRegistration'
+import DepartmentRegistration from './Department/DepartmentRegistration'
 import Home from './HomeMenu/Home'
+import Navbar from './Navbar'
+import StudentRegistration from './Student/StudentRegistration'
 
 
 function Menu() {
 
   return (
     <>
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/departments" element={<DepartmentRegistration />} />
-            <Route path="/students" element={<DepartmentRegistration />} />
-        </Routes>
+      <Navbar />
+      <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/departments" element={<DepartmentRegistration />} />
+          <Route path="/students" element={<StudentRegistration />} />
+      </Routes>
     </>
   )
 }

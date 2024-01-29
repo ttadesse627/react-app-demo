@@ -1,6 +1,10 @@
-.navbar-container
-{
-    background-color: rgb(198, 196, 214);
-    width: 50vh;
-    left: 0;
-}
+.navbar-container {
+    position: sticky;
+    top: 0;
+    width: 200px;
+    background-color: #eee;
+    padding: 10px;
+    height: 100vh; /* Set the height of the sidebar to the full viewport height */
+    margin-right: 10px;
+    overflow-y: auto; /* Enable vertical scrolling for the sidebar */
+  }

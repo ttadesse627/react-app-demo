@@ -1,23 +1,43 @@
-import './InputField.css'
+import "../../styles/input-field-style.css";
 
-interface InputFieldProps<T>{
-    id: string;
-    name?:string;
-    label?: string;
-    type: string;
-    inputRef?: React.MutableRefObject<HTMLInputElement | null>;
-    value?: T;
-    placeHolder?: string;
-    onChange?: (newValue: T) => void;
+interface InputFieldProps<T> {
+  id: string;
+  name?: string;
+  label?: string;
+  type: string;
+  inputRef?: React.MutableRefObject<HTMLInputElement | null>;
+  value?: T;
+  placeHolder?: string;
+  required?: boolean;
+  onChange?: (newValue: T) => void;
 }
 
-const InputField : React.FC<InputFieldProps<any>> = ({id, label, type, inputRef, name, value, placeHolder,onChange}) => {
-    return (
-        <div className="input-div">
-            <label htmlFor={id}>{label}</label>
-            <input id={id} type={type} ref={inputRef} name={name} value={value} placeholder={placeHolder} onChange={onChange} />
-        </div>
-    );
+const InputField: React.FC<InputFieldProps<any>> = ({
+  id,
+  label,
+  type,
+  inputRef,
+  name,
+  value,
+  placeHolder,
+  required,
+  onChange,
+}) => {
+  return (
+    <div className="input-div">
+      <label htmlFor={id}>{label}</label>
+      <input
+        id={id}
+        type={type}
+        ref={inputRef}
+        name={name}
+        value={value}
+        placeholder={placeHolder}
+        onChange={onChange}
+        required={required}
+      />
+    </div>
+  );
 };
 
 export default InputField;

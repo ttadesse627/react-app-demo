@@ -1,4 +1,4 @@
-import "../../styles/input-field-style.css";
+import "../../../styles/input-field-style.css";
 
 interface InputFieldProps<T> {
   id: string;

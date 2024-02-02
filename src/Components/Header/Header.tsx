@@ -29,7 +29,7 @@ function Header() {
   return (
     <div className="header">
       <div className="app-logo">
-        <img src="src\assets\images\honey-2.png" alt="App-Logo" />
+        <img src="src\assets\images\icons\honey-2.png" alt="App-Logo" />
         <span className="app-name">
           <h1>My App</h1>
         </span>
@@ -45,7 +45,10 @@ function Header() {
           onClick={displayProfileMenu}
           ref={profileContainerRef}
         >
-          <img src="src\assets\images\user_1077063.png" alt="React-Logo" />
+          <img
+            src="src\assets\images\icons\user_1077063.png"
+            alt="React-Logo"
+          />
           <div className={cssClass}>
             <span>
               <i>Sign Out</i>

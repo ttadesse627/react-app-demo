@@ -1,10 +1,10 @@
 import { UUID } from "crypto";
 
-export default interface IDepartmentData {
-  isError: any;
-  errorsOrEmptyList: any;
-  errors: any;
-  deptProps: {
+export default interface IApplicantData {
+  isError?: any;
+  errorsOrEmptyList?: any;
+  errors?: any;
+  applicantProps?: {
     id: UUID;
     name: string;
     shortName: string;
@@ -12,7 +12,7 @@ export default interface IDepartmentData {
     currentSemister: number;
     Courses: {}[];
   }[];
-  firstError: {
+  firstError?: {
     code: string;
     description: string;
     type: number;

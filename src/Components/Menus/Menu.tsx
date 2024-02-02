@@ -1,22 +1,19 @@
 import { Route, Routes } from "react-router-dom";
-import DepartmentRegistration from "./Department/DepartmentRegistration";
 import Home from "./HomeMenu/Home";
-import DepartmentList from "./Department/DepartmentList";
-import StudentsList from "./Student/StudentsList";
-import StudentRegistration from "./Student/StudentRegistration";
+import PageNotFound from "./PageNotFound";
+import ApplicantList from "./Applicant/ApplicantList";
+import LookupList from "./Lookup/LookupList";
+import LookupRegistration from "./Lookup/LookupRegistration";
 
 function Menu() {
   return (
     <div className="routes">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/departments" element={<DepartmentList />} />
-        <Route
-          path="/departments/add-new"
-          element={<DepartmentRegistration />}
-        />
-        <Route path="/students" element={<StudentsList />} />
-        <Route path="/students/add-new" element={<StudentRegistration />} />
+        <Route path="/applicant/list" element={<ApplicantList />} />
+        <Route path="/lookup/list" element={<LookupList />} />
+        <Route path="/lookup/add-new" element={<LookupRegistration />} />
+        <Route Component={PageNotFound} />
       </Routes>
     </div>
   );

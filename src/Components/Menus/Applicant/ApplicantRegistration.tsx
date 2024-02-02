@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import InputField from "../../InputField/InputField";
-import Button from "../../Button/Button";
+import InputField from "../../Common/InputField/InputField";
+import Button from "../../Common/Button/Button";
 import "../../../styles/form-style.css";
+import { api_url } from "../../../Environment";
 
-const DepartmentRegistration: React.FC = () => {
-  const API_Endpoint = "http://localhost:5000/Department";
+const ApplicantRegistration: React.FC = () => {
+  const API_Endpoint = api_url;
 
   const [name, setName] = useState("");
   const [shortName, setShortName] = useState("");
@@ -108,4 +109,4 @@ const DepartmentRegistration: React.FC = () => {
   );
 };
 
-export default DepartmentRegistration;
+export default ApplicantRegistration;

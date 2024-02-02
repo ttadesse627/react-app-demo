@@ -1,17 +1,17 @@
 import { UUID } from "crypto";
 
 export default interface IStudentData {
-  isError: boolean;
-  errorsOrEmptyList: string[];
-  errors: string[];
-  value: {
+  isError?: boolean;
+  errorsOrEmptyList?: string[];
+  errors?: string[];
+  value?: {
     id: UUID;
     firstName: string;
     middleName: string;
     lastName: string;
     birthDate: string;
   }[];
-  firstError: {
+  firstError?: {
     code: string;
     description: string;
     type: number;

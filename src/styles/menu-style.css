@@ -21,7 +21,21 @@
   }
   
   /* Routes styles */
-  .routes {
-    flex-grow: 1;
+  .root-layout {
+    width: 100%;
     padding: 10px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    justify-content: start;
+  }
+
+  .navbar-container {
+    position: sticky;
+    top: 0;
+    width: 200px;
+    background-color: #eee;
+    padding: 10px;
+    height: 100vh; /* Set the height of the sidebar to the full viewport height */
+    margin-right: 10px;
+    overflow-y: auto; /* Enable vertical scrolling for the sidebar */
   }

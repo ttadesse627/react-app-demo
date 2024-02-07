@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 import { UUID } from "crypto";
 import ToastNotification from "../../Common/ToastNotification";
 
-const API_Endpoint = "http://127.0.0.1:8000/Department";
+const API_Endpoint = "http://127.0.0.1:8000/Applicant";
 
 const ApplicantsList: React.FC<IApplicantData> = () => {
   const [data, setData] = useState<IApplicantData["applicantProps"]>([]);

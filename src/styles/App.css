@@ -12,10 +12,3 @@
     flex-grow: 1;
     overflow: hidden; /* Hide overflow to prevent double scrollbars */
   }
-  
-  /* Routes styles */
-  .routes {
-    flex-grow: 1;
-    padding: 10px;
-    overflow-y: auto; /* Enable vertical scrolling for the content area */
-  }

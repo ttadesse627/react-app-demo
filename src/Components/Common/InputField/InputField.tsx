@@ -25,8 +25,11 @@ const InputField: React.FC<InputFieldProps<any>> = ({
 }) => {
   return (
     <div className="input-div">
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id} className="input-div-item">
+        {label}
+      </label>
       <input
+        className="input-div-item"
         id={id}
         type={type}
         ref={inputRef}

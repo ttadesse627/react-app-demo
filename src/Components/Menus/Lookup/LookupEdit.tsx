@@ -6,17 +6,22 @@ import { api_url } from "../../../Environment";
 import axios from "axios";
 import ToastNotification from "../../Common/ToastNotification";
 import { ToastContainer } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const LookupRegistration: React.FC = (props) => {
+const LookupEdit: React.FC = (props) => {
   const API_Endpoint = `${api_url}/lookup`;
+  const stateParamValue = useLocation().state.lookupData;
 
-  const [category, setCategory] = useState("");
-  const [value, setValue] = useState("");
+  const [id, setId] = useState(stateParamValue.id);
+  const [category, setCategory] = useState(stateParamValue.category);
+  const [value, setValue] = useState(stateParamValue.value);
+
+  const navigate = useNavigate();
 
   let changeCategoryHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCategory(e.target.value);
   };
+
   let changeValueHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
@@ -25,15 +30,15 @@ const LookupRegistration: React.FC = (props) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${API_Endpoint}/create`, {
+      const response = await axios.put(`${API_Endpoint}/edit/${id}`, {
+        id,
         category,
         value,
       });
 
       if (response.status === 200) {
-        setCategory("");
-        setValue("");
         ToastNotification.SuccessNotification("" + response.statusText);
+        setTimeout(() => navigate("/lookups"), 1000);
       } else {
         // Handle error response
         ToastNotification.ErrorNotification(
@@ -53,7 +58,7 @@ const LookupRegistration: React.FC = (props) => {
   return (
     <div className="container">
       <Link to="/lookups">Back</Link>
-      <h1>Lookup Registration Form</h1>
+      <h1>Lookup Edit Form</h1>
       <form className="input-form" onSubmit={handleSubmit}>
         <div className="input-container">
           <InputField
@@ -80,4 +85,4 @@ const LookupRegistration: React.FC = (props) => {
   );
 };
 
-export default LookupRegistration;
+export default LookupEdit;

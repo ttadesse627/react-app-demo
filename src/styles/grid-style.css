@@ -8,17 +8,27 @@
 }
 
 .grid-table{
-  background-color: #666;
+  background-color: #241f1f;
   width: 90%;
+  border: 1px solid #ddd;
   border-radius: 10px;
-  border-collapse: collapse;
+  border-collapse: separate;
+  box-sizing: border-box;
+  padding: 5px;
 }
 
 th, td {
   padding: 10px;
   text-align: left;
+  border: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
 th{
   font-size: 1.2rem;
+  background-color: #5c4646;
+  text-align: center;
+}
+.grid-btn-container{
+  display: flex;
+  justify-content: space-evenly;
 }

@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../../styles/grid-style.css";
-import IApplicantData from "../../Interfaces/ILookupData";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import { UUID } from "crypto";
 import ToastNotification from "../../Common/ToastNotification";
 import { api_url } from "../../../Environment";
 import ILookupData from "../../Interfaces/ILookupData";
+import "../../../assets/font-awesome-4.7.0/css/font-awesome.min.css";
 
-const LookupList: React.FC<IApplicantData> = () => {
+const LookupList: React.FC<ILookupData> = () => {
   const api_controller = `${api_url}/lookup`;
   const [data, setData] = useState<ILookupData["lookupProps"]>([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
   let rows: React.JSX.Element[] = [];
 
   useEffect(() => {
@@ -20,20 +22,23 @@ const LookupList: React.FC<IApplicantData> = () => {
 
   if (data !== undefined) {
     if (data.length > 0) {
+      const properties = Object.keys(data[0]); // Get property names from the first item
       rows = data.map((lookup, index) => (
         <tr key={`${lookup.id}-${index}`} className="table-row">
-          <td className="row-data">{lookup.id}</td>
-          <td className="row-data">{lookup.category}</td>
-          <td className="row-data">{lookup.value}</td>
-          <td className="row-data">
+          {properties.map((property, index) => (
+            <td key={index} className="row-data">
+              {lookup[property as keyof typeof lookup]}
+            </td>
+          ))}
+          <td className="row-data grid-btn-container">
             <button
               type="button"
               title="Delete"
               onClick={() => handleDelete(lookup.id)}
             >
               <img
-                src="src\assets\images\icons\seo-social-web-network-internet_262_icon-icons.com_61518.png"
-                alt="delete"
+                src="src/assets/images/icons/seo-social-web-network-internet_262_icon-icons.com_61518.png"
+                alt="Delete"
                 style={{ width: 30, height: 30 }}
               />
             </button>
@@ -43,8 +48,19 @@ const LookupList: React.FC<IApplicantData> = () => {
               onClick={() => ToastNotification.SuccessNotification(lookup.id)}
             >
               <img
-                src="src\assets\images\icons\view-1.png"
+                src="src/assets/images/icons/view-1.png"
                 alt="view detail"
+                style={{ width: 30, height: 30 }}
+              />
+            </button>
+            <button
+              type="button"
+              title="Edit"
+              onClick={() => handleEdit(lookup)}
+            >
+              <img
+                src="src\assets\images\icons\1814074_draw_edit_pencile_write_icon.png"
+                alt="Edit"
                 style={{ width: 30, height: 30 }}
               />
             </button>
@@ -59,7 +75,9 @@ const LookupList: React.FC<IApplicantData> = () => {
     try {
       response = await axios.get(`${api_controller}/get-all-lookup`);
       setData(response.data.items);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       ToastNotification.ErrorNotification("" + error);
     }
   };
@@ -79,10 +97,19 @@ const LookupList: React.FC<IApplicantData> = () => {
     }
   };
 
+  const handleEdit = async (lookup: any) => {
+    navigate(`edit/${lookup.id}`, { state: { lookupData: lookup } });
+  };
+
   return (
     <div className="grid-container">
-      <Link to="/lookup/add-new">Add</Link>
-      {rows.length > 0 ? (
+      <Link to="add-new">Add New</Link>
+      {loading ? (
+        <div>
+          <p>Loading</p>
+          <i className="fa fa-spinner fa-spin" style={{ fontSize: 24 }}></i>
+        </div>
+      ) : rows.length > 0 ? (
         <table className="grid-table">
           <thead className="table-head">
             <tr className="table-head-row">
